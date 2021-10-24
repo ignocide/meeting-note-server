@@ -4,7 +4,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import Entries from './entity';
 import { UserModule } from './user/user.module';
-import { SubjectModule } from './subject/subject.module';
+import { NoteModule } from './note/note.module';
 
 @Module({
   imports: [
@@ -19,7 +19,7 @@ import { SubjectModule } from './subject/subject.module';
       synchronize: true,
     }),
     UserModule,
-    SubjectModule,
+    NoteModule,
   ],
   controllers: [AppController],
   providers: [AppService],

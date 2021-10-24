@@ -7,7 +7,7 @@ import {
 } from 'typeorm';
 import { User } from './user.entitiy';
 
-export interface SubjectState {
+export interface NoteState {
   id: number;
   user: User;
   title: string;
@@ -16,13 +16,13 @@ export interface SubjectState {
 }
 
 @Entity()
-export class Subject {
-  constructor(subject?: Omit<SubjectState, 'id'>) {
-    if (subject) {
-      this.user = subject.user;
-      this.title = subject.title;
-      this.createdDate = subject.createdDate;
-      this.updatedDate = subject.updatedDate;
+export class Note {
+  constructor(note?: Omit<NoteState, 'id'>) {
+    if (note) {
+      this.user = note.user;
+      this.title = note.title;
+      this.createdDate = note.createdDate;
+      this.updatedDate = note.updatedDate;
     }
   }
 

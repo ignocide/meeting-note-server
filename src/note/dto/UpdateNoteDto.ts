@@ -1,6 +1,6 @@
 import { IsNotEmpty } from 'class-validator';
 
-export class UpdateSubjectDto {
+export class UpdateNoteDto {
   @IsNotEmpty()
   title: string;
 }
