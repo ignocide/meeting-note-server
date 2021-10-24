@@ -12,6 +12,19 @@ export class NoteService {
     private noteRepository: NoteRepository,
   ) {}
 
+  async getList(userId: number) {
+    const list = await this.noteRepository.find({
+      where: {
+        user: User.fromUserId(userId),
+      },
+      order: {
+        updatedDate: 'DESC',
+      },
+    });
+
+    return list;
+  }
+
   async create(userId, { title }: CreateNoteDto) {
     const newNote = new Note({
       title: title,

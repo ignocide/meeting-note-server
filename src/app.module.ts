@@ -5,6 +5,7 @@ import { AppService } from './app.service';
 import Entries from './entity';
 import { UserModule } from './user/user.module';
 import { NoteModule } from './note/note.module';
+import { PageModule } from './page/page.module';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { NoteModule } from './note/note.module';
     }),
     UserModule,
     NoteModule,
+    PageModule,
   ],
   controllers: [AppController],
   providers: [AppService],

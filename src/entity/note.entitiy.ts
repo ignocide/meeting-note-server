@@ -17,6 +17,13 @@ export interface NoteState {
 
 @Entity()
 export class Note {
+  static from(noteId: number, userId: number) {
+    const note = new Note();
+    note.id = noteId;
+    note.user = User.fromUserId(userId);
+    return note;
+  }
+
   constructor(note?: Omit<NoteState, 'id'>) {
     if (note) {
       this.user = note.user;
